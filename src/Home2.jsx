@@ -30,7 +30,6 @@ const Home2 = () => {
         dispatch(Insertdata(a))
     }
 
-    
     if (loading == true) {
         return  <div className="spinner" />
     }
