@@ -79,7 +79,6 @@ const Home2 = () => {
                         <td><input type="text" ref={txtpassword} /></td>
                     </tr>
                     <tr>
-                    
                         <td>
                             <input type="submit" value={'submit'} />
                         </td>
