@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Fetchdata, Insertdata } from './Store2'
+import Fetchdata from "./Action/Employeeview"
 
 const Home2 = () => {
-    const { loading, data, error } = useSelector((state) => state)
+    const { loading, data, error } = useSelector((state) => state.employee)
     const dispatch = useDispatch()
     var txtname = useRef();
     var txtemail = useRef();
@@ -14,21 +14,7 @@ const Home2 = () => {
         dispatch(Fetchdata())
     }, [])
 
-    const handlesubmit = (e) => {
-        e.preventDefault();
-
-        var name = txtname.current.value;
-        var email = txtemail.current.value;
-        var password = txtpassword.current.value;
-
-        var a = new FormData()
-
-        a.set('name', name)
-        a.set('email', email)
-        a.set('password', password)
-
-        dispatch(Insertdata(a))
-    }
+   
 
     if (loading == true) {
         return  <div className="spinner" />
@@ -62,7 +48,7 @@ const Home2 = () => {
                     }
                 </tbody>
             </table>
-            <form method="post" onSubmit={handlesubmit}>
+            {/* <form method="post" onSubmit={handlesubmit}>
                 <table border={1} cellPadding={7} cellSpacing={0.1}>
                     <tr>
                         <td>Name</td>
@@ -82,7 +68,7 @@ const Home2 = () => {
                         </td>
                     </tr>
                 </table>
-            </form>
+            </form> */}
         </>
     )
 }
