@@ -63,7 +63,6 @@ const Home2 = () => {
                     }
                 </tbody>
             </table>
-
             <form method="post" onSubmit={handlesubmit}>
                 <table border={1} cellPadding={7} cellSpacing={0.1}>
                     <tr>
