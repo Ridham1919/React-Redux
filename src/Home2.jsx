@@ -32,7 +32,6 @@ const Home2 = () => {
 
     if (loading == true) {
         return  <div className="spinner" />
-
     }
 
     if (error != null) {
